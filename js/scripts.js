@@ -28,7 +28,7 @@ buttons.forEach((btn) => {
         const value = e.target.innerText;
 
         if (+value >= 0 || value === ".") {
-            console.log(value);
+            calc.addDigit(value);
         } else {
             console.log("Op: " + value);
         }
