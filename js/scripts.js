@@ -11,8 +11,31 @@ class Calculator {
 
     // add digit to calculator screen
     addDigit(digit) {
+        // check if current operation already has a dot
+        if(digit === "." && this.currentOperationText.innerText.includes(".")) {
+            return;
+        }
+
         this.currentOperation = digit;
         this.updateScreen();
+    }
+
+    // Process all calculator operations
+    processOperation(operation) {
+
+
+        // Get current and previous value
+        let operationValue;
+        let previous = +this.previousOperationText.innerText;
+        let current = +this.currentOperationText.innerText;
+
+
+        switch(operation) {
+            case "+":
+                break;
+            default:
+                return;
+        }
     }
 
     // Change values of the calculator screen
@@ -30,7 +53,7 @@ buttons.forEach((btn) => {
         if (+value >= 0 || value === ".") {
             calc.addDigit(value);
         } else {
-            console.log("Op: " + value);
+            calc.processOperation(value);
         }
     });
 });
