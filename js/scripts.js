@@ -26,12 +26,14 @@ class Calculator {
 
         // Get current and previous value
         let operationValue;
-        let previous = +this.previousOperationText.innerText;
-        let current = +this.currentOperationText.innerText;
+        const previous = +this.previousOperationText.innerText;
+        const current = +this.currentOperationText.innerText;
 
 
         switch(operation) {
             case "+":
+                operationValue = previous + current;
+                this.updateScreen(operationValue, operation, current, previous);
                 break;
             default:
                 return;
@@ -39,7 +41,13 @@ class Calculator {
     }
 
     // Change values of the calculator screen
-    updateScreen() {
+    updateScreen(operationValue = null,
+        operation = null,
+        current = null,
+        previous = null) {
+
+        console.log(operationValue, operation, current, previous);
+
         this.currentOperationText.innerText += this.currentOperation;
     }
 }
