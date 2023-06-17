@@ -93,7 +93,7 @@ class Calculator {
         }
     }
 
-    // CHange math operation
+    // Change math operation
     changeoperation(operation) {
         const mathOperation = ["*", "/", "+", "-"];
 
